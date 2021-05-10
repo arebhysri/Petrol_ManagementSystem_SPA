@@ -1,1 +1,411 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: SourceSansPro-SemiBold;
+}
+/*---background color setting -----*/
+.bg-spring {
+    padding: 20px;
+    min-height: 40em;
+    background: -webkit-linear-gradient(70deg, #b3e5fc 30%, rgba(0, 0, 0, 0) 30%),
+        -webkit-linear-gradient(30deg, #e3f2fd 60%, #c5cae9 60%);
+    background: -o-linear-gradient(70deg, #b3e5fc 30%, rgba(0, 0, 0, 0) 30%),
+        -o-linear-gradient(30deg, #e3f2fd 60%, #c5cae9 60%);
+    background: -moz-linear-gradient(70deg, #b3e5fc 30%, rgba(0, 0, 0, 0) 30%),
+        -moz-linear-gradient(30deg, #e3f2fd 60%, #c5cae9 60%);
+    background: linear-gradient(70deg, #b3e5fc 30%, rgba(0, 0, 0, 0) 30%),
+        linear-gradient(30deg, #e3f2fd 60%, #c5cae9 60%);
+}
+
+/*---end background color setting -----*/
+.groupFormInput {
+    display: flex;
+
+    .inputField {
+        border: 0 !important;
+        padding: 0px;
+        border-bottom: 1px solid rgb(19, 19, 134) !important;
+        font-size: 10pt;
+    }
+
+    .inputSufixBox {
+        border-bottom: 1px solid rgb(19, 19, 134);
+        border-left: 0 !important;
+        padding-right: 10px;
+        font-size: 10pt;
+    }
+    .equalBtnMainStyle {
+        cursor: pointer;
+        padding: 10px;
+        text-align: center;
+
+        .equalBtn {
+            background-color: #c4c7cc;
+            padding: 5px;
+            border-radius: 20%;
+            vertical-align: -webkit-baseline-middle;
+        }
+    }
+    hr {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        border: 0;
+        border-top: 1px solid #ccc !important;
+    }
+    .sumTotal {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .buttonSection {
+        display: flex;
+        padding: 15px 0px !important;
+    }
+}
+/*end heading style*/
+/*heading style*/
+.headingStyle {
+    text-align: center;
+    background-color: #1e419f;
+    color: white;
+    position: relative;
+    transform: translate(0px, 10px);
+    box-shadow: 0px 2px 7px grey;
+}
+.alertMsg {
+    color: red;
+    font-size: 8pt;
+}
+.p-inputtext {
+    padding: 2px !important;
+    font-size: 9pt !important;
+}
+.pi {
+    font-size: 9pt !important;
+}
+.p-datepicker {
+    padding: 1px !important;
+}
+.p-datepicker table td {
+    padding: 0px !important;
+}
+.p-datepicker table td > span {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    border-radius: 50%;
+    transition: box-shadow 0.2s;
+    border: 1px solid transparent;
+    font-size: 9pt !important;
+}
+
+.p-datepicker table th > span {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    font-size: 9pt !important;
+}
+.p-datepicker .p-datepicker-header .p-datepicker-title {
+    line-height: 2rem !important;
+    font-size: 10pt !important;
+}
+.p-dropdown:not(.p-disabled):hover {
+    border: 0 !important;
+}
+.p-calendar .p-inputtext {
+    flex: 1 1 auto;
+    width: 1%;
+    border-bottom: 1px solid rgb(19, 19, 134) !important;
+    border: 0px solid;
+}
+.p-dropdown {
+    background: #ffffff;
+    border: 0px solid #ced4da !important;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: 3px;
+    border-bottom: 1px solid rgb(19, 19, 134) !important;
+}
+.p-dialog .p-dialog-header {
+    border-bottom: 0 none;
+    background: #e8eaf6 !important;
+    color: #495057;
+    padding: 10px !important;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.p-dialog .p-dialog-content {
+    background: #ffffff;
+    color: #495057;
+    padding: 10px !important;
+}
+.p-link {
+    margin: 5px !important;
+}
+.p-column-filter-menu-button {
+    width: 10px !important;
+    height: 15px !important;
+}
+.p-datatable .p-datatable-thead > tr > th {
+    padding: 5px !important;
+    font-size: 10pt;
+}
+.p-datatable .p-datatable-tbody > tr > td {
+    padding: 5px !important;
+    font-size: 10pt !important;
+}
+button:focus {
+    outline: 1px dotted;
+    outline: 0px auto -webkit-focus-ring-color !important;
+}
+@media only screen and (min-width: 320px) {
+    h3 {
+        font-size: 8pt;
+    }
+    hr {
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .p-datatable .p-datatable-thead > tr > th {
+        text-align: left;
+        padding: 1rem 1rem;
+        border: 1px solid #e9ecef;
+        border-width: 0 0 1px 0;
+        font-weight: 600;
+        color: #495057;
+        background: #f8f9fa;
+        transition: box-shadow 0.2s;
+        font-size: 10px;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 5px !important;
+        font-size: 8pt !important;
+    }
+    .col-1 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 8.333333%;
+        flex: 0 0 8.333333%;
+        max-width: 1.333333%;
+    }
+    .p-calendar .p-inputtext {
+        flex: 1 1 auto;
+        width: 1%;
+        border-bottom: 1px solid #131386 !important;
+        border: 0px solid;
+        font-size: 6pt !important;
+    }
+    .p-dropdown .p-dropdown-label {
+        background: transparent;
+        border: 0 none;
+        font-size: 6pt !important;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        font-size: 8pt;
+    }
+}
+@media only screen and (min-width: 360px) {
+    h3 {
+        font-size: 8pt;
+    }
+    hr {
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .p-datatable .p-datatable-thead > tr > th {
+        text-align: left;
+        padding: 1rem 1rem;
+        border: 1px solid #e9ecef;
+        border-width: 0 0 1px 0;
+        font-weight: 600;
+        color: #495057;
+        background: #f8f9fa;
+        transition: box-shadow 0.2s;
+        font-size: 10px;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 5px !important;
+        font-size: 8pt !important;
+    }
+    .col-1 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 8.333333%;
+        flex: 0 0 8.333333%;
+        max-width: 1.333333%;
+    }
+}
+@media only screen and (min-width: 375px) {
+    h3 {
+        font-size: 13pt;
+    }
+    hr {
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .p-datatable .p-datatable-thead > tr > th {
+        text-align: left;
+        padding: 1rem 1rem;
+        border: 1px solid #e9ecef;
+        border-width: 0 0 1px 0;
+        font-weight: 600;
+        color: #495057;
+        background: #f8f9fa;
+        transition: box-shadow 0.2s;
+        font-size: 10px;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 5px !important;
+        font-size: 8pt !important;
+    }
+    .col-1 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 8.333333%;
+        flex: 0 0 8.333333%;
+        max-width: 1.333333%;
+    }
+}
+@media only screen and (min-width: 425px) {
+    h3 {
+        font-size: 13pt;
+    }
+    hr {
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .p-datatable .p-datatable-thead > tr > th {
+        text-align: left;
+        padding: 1rem 1rem;
+        border: 1px solid #e9ecef;
+        border-width: 0 0 1px 0;
+        font-weight: 600;
+        color: #495057;
+        background: #f8f9fa;
+        transition: box-shadow 0.2s;
+        font-size: 10px;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 5px !important;
+        font-size: 8pt !important;
+    }
+    .col-1 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 8.333333%;
+        flex: 0 0 8.333333%;
+        max-width: 1.333333%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    hr {
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .p-calendar .p-inputtext {
+        flex: 1 1 auto;
+        width: 1%;
+        border-bottom: 1px solid #131386 !important;
+        border: 0px solid;
+        font-size: 6pt !important;
+    }
+    .p-dropdown .p-dropdown-label {
+        background: transparent;
+        border: 0 none;
+        font-size: 6pt !important;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        font-size: 8pt;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .p-datatable .p-datatable-thead > tr > th {
+        text-align: left;
+        padding: 1rem 1rem;
+        border: 1px solid #e9ecef;
+        border-width: 0 0 1px 0;
+        font-weight: 600;
+        color: #495057;
+        background: #f8f9fa;
+        transition: box-shadow 0.2s;
+        font-size: 8pt;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 5px !important;
+        font-size: 8pt !important;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        font-size: 8pt
+    }
+    .p-calendar .p-inputtext {
+        flex: 1 1 auto;
+        width: 1%;
+        border-bottom: 1px solid #131386 !important;
+        border: 0px solid;
+        font-size: 8pt !important;
+    }
+    .p-dropdown .p-dropdown-label {
+        background: transparent;
+        border: 0 none;
+        font-size: 8pt !important;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .p-datatable .p-datatable-thead > tr > th {
+        text-align: left;
+        padding: 1rem 1rem;
+        border: 1px solid #e9ecef;
+        border-width: 0 0 1px 0;
+        font-weight: 600;
+        color: #495057;
+        background: #f8f9fa;
+        transition: box-shadow 0.2s;
+        font-size: 10pt;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 5px !important;
+        font-size: 10pt !important;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        font-size: 10pt
+    }
+    .p-calendar .p-inputtext {
+        flex: 1 1 auto;
+        width: 1%;
+        border-bottom: 1px solid #131386 !important;
+        border: 0px solid;
+        font-size: 10pt !important;
+    }
+    .p-dropdown .p-dropdown-label {
+        background: transparent;
+        border: 0 none;
+        font-size: 10pt !important;
+    }
+}

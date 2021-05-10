@@ -1,0 +1,55 @@
+<div id="contentToConvert">
+    <div class="col-12" style="padding-top: 10px;">
+        <div>
+            <h4 style="text-align: center;color: red;">Wanninayake Filling Station - Unawatuna Buttala</h4>
+        </div>
+        <div style="display: flex;">
+            <div style="margin-right: auto;"><span>Date : </span> <span>{{createdDate |date}}</span></div>
+            <div style="margin-left: auto;"><span>Time : </span> <span>{{createdDate |date:'h:mm a'}}</span></div>
+        </div>
+        <div class="col-12">
+            <h5 style="text-align: center">All Fuel Inventory</h5>
+        </div>
+        <div class="col-6"></div>
+    </div>
+    <div class="col-12" style="display: flex;">
+        <div class="col-4" style="border:4px solid ;border-right: none !important;"><span>Fuel Type</span></div>
+        <div class="col-4" style="border:4px solid ;border-right: none !important;"><span>Total Available Quantity</span></div>
+        <div class="col-4" style="border:4px solid ;"><span>Unit Price</span></div>
+    </div>
+    <div class="col-12" style="display: flex;">
+        <div class="col-4"
+            style="border:4px solid ;border-bottom: none !important;border-top: none !important; border-right: none !important;">
+            <div><span>Petrol 92</span></div>
+
+            <div><span>Petrol 95</span></div>
+            <div><span>Super Diesel</span></div>
+            <div><span>Auto Diesel</span></div>
+        </div>
+        <div class="col-4" style="border:4px solid ;border-top: none !important;border-right: none !important;">
+            <div><span>{{totalPetrol92 | number:'1.4-4'}} liters</span></div>
+
+            <div><span>{{totalPetrol95 | number:'1.4-4'}} liters</span></div>
+            <div><span>{{totalSD | number:'1.4-4'}} liters</span></div>
+            <div><span>{{totalAD | number:'1.4-4'}} liters</span></div>
+        </div>
+        <div class="col-4" style="border:4px solid ;border-top: none !important;">
+            <div><span>{{P92Price | currency:'Rs ':'symbol':'1.2-2'}}</span></div>
+            <div><span>{{P95Price | currency:'Rs ':'symbol':'1.2-2'}}</span></div>
+            <div><span>{{SDPrice | currency:'Rs ':'symbol':'1.2-2'}}</span></div>
+            <div><span>{{ADPrice | currency:'Rs ':'symbol':'1.2-2'}}</span></div>
+        </div>
+    </div>
+    <div class="col-12" style="display: flex;">
+        <div class="col-4" style="border: 4px solid;
+        border-top: none;
+        border-right: none;"><span></span></div>
+        <div class="col-8" style="border: 4px solid;text-align: center;
+        border-top: none;"><label>Total Price : </label><span>{{calculateTotaQuantity | currency:'Rs ':'symbol':'1.2-2'}}</span></div>
+    </div>
+
+</div>
+<div class="col-12" style="padding-top:10px ;">
+    <button style="color: white;border: rgb(117, 117, 233);background-color: rgb(117, 117, 233);"
+        (click)="generatePDF()">Generate PDF</button>
+</div>

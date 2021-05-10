@@ -1,0 +1,135 @@
+/*input field style*/
+.input-group {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    .input-style {
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-family: SourceSansPro-Bold;
+        font-size: 16px;
+        color: #4b2354;
+        line-height: 1.2;
+
+        display: block;
+        width: 100%;
+        height: 62px;
+        background: transparent;
+        padding: 0 20px 0 23px;
+    }
+}
+
+/*end input field*/
+
+/*btn style*/
+.button-group {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    .signin-btn {
+        box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+        -moz-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+        -webkit-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+        -o-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+        -ms-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        min-width: 160px;
+        height: 50px;
+        background-color: #bd59d4;
+        border-radius: 25px;
+        border: 1px solid #bd59d4;
+        font-family: SourceSansPro-SemiBold;
+        font-size: 14px;
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+}
+/*end button style*/
+.headingDesign {
+    text-align: center;
+}
+.mainSubHeading {
+    padding: 20px;
+    .subHeading {
+        text-align: center;
+        text-shadow: 2px 2px #ccc;
+    }
+}
+.mainContain {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .headingDesign {
+        font-size: 14pt;
+    }
+    .mainSubHeading {
+        padding: 10px;
+        .subHeading {
+            font-size: 14pt;
+        }
+    }
+    .input-group {
+        .input-style {
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-family: SourceSansPro-Bold;
+            font-size: 14px;
+            color: #4b2354;
+            line-height: 1.2;
+            display: block;
+            width: 100%;
+            height: 35px;
+            background: transparent;
+            padding: 0 10px 0 10px;
+        }
+    }
+    .button-group {
+        padding: 10px;
+        .signin-btn {
+            padding: 0 10px;
+            min-width: 160px;
+            height: 30px;
+            border-radius: 25px;
+            font-size: 12px;
+            color: #fff;
+            line-height: 1.2;
+            text-transform: uppercase;
+            transition: all 0.4s;
+        }
+    }
+    .mainContain {
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px;
+        min-width: 24em !important;
+    }
+}
+
+//media query
+@media only screen and (max-width: 375px) {
+    .mainContain {
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px;
+        min-width: 20em !important;
+    }
+}

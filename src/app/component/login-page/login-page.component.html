@@ -1,0 +1,44 @@
+<!--background image-->
+<div style="background-image: url('../../../assets/images/login_background.jpg');padding: 100px;min-height: 43em;">
+    <!--login form-->
+    <div class="container" style="display: flex;justify-content: space-around;">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mainContain">
+            <!--Company name-->
+            <div>
+                <h4 class="headingDesign">Wanninayake Filling Station - Unawatuna Buttala</h4>
+            </div>
+            <!--end company name-->
+            <!--sign up heading-->
+            <div class="mainSubHeading">
+                <h3 class="subHeading">Sign In</h3>
+            </div>
+            <!--sign up heading end-->
+            <div>
+                <!--User name-->
+                <div class="input-group">
+                    <input class="input-style" placeholder="Enter user name" type="email" [(ngModel)]="username" />
+                    
+                </div>
+                <!--end user name-->
+                <!--password-->
+                <div class="input-group">
+                    <input class="input-style" placeholder="Enter your password" type="password" [(ngModel)]="password" />
+                </div>
+                <!--end password-->
+                <div class="input-group">
+                    <div *ngIf="showAlert" class="alertMsg"><span>{{alert}}</span></div>
+                </div>
+                <!--button section-->
+                <div class="button-group">
+                    <button class="signin-btn" (click)="loginSys(username,password)">Sign In</button>
+                </div>
+                <!--end button section-->
+            </div>
+
+        </div>
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></div>
+    </div>
+    <!--end login form-->
+</div>
+<!--background image end-->

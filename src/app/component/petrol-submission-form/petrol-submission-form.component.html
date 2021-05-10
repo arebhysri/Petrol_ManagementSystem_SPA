@@ -1,0 +1,193 @@
+<app-header-page></app-header-page>
+<!--main content-->
+<div class="bg-spring">
+    <!--form started-->
+    <div class="container" style="background-color: white;border-radius: 5px;padding: 0;">
+        <!--heading-->
+        <div class="headingStyle">
+            <h3>Petrol & Diesel Inventory Management</h3>
+        </div>
+        <!--end heading-->
+        <div>
+            <!--button section-->
+            <div class="container groupFormInput">
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 paddingZero buttonSection">
+                    <div style="margin-right: auto;">
+                        <button class="showAllBtn" (click)="viewFualDetail()">View Fuel Details</button>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+            </div>
+            <!--button section end-->
+            <div>
+                <hr />
+            </div>
+            <!--form group 1-->
+            <div class="container groupFormInput">
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+                <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 paddingZero groupInput">
+                    <!--date section-->
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 paddingZero">
+                        <div><label>Date: </label></div>
+                        <div>
+                            <p-calendar [(ngModel)]="selectedDate" pTooltip="Select date" tooltipPosition="top">
+                            </p-calendar>
+                        </div>
+                        <div class="alertMsg" *ngIf="showSelectedDateAlertAlertmsg"><span>{{selectedDateAlert}}</span>
+                        </div>
+                    </div>
+                    <!--end date section-->
+                    <!--fual type-->
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 paddingZero">
+                        <div><label>Fuel Type: </label></div>
+                        <div>
+                            <p-dropdown [options]="dropdwnFualList" [(ngModel)]="selectedFualType"
+                                (onChange)="changeFuel($event)" pTooltip="Select fuel type" tooltipPosition="top"
+                                (onChange)="getPumberList($event)" placeholder="Select a Fuel Type"></p-dropdown>
+                        </div>
+                        <div class="alertMsg" *ngIf="showSelectedselectedFualTypeAlertmsg">
+                            <span>{{selectedselectedFualTypeAlert}}</span>
+                        </div>
+                    </div>
+                    <!--end of fual type-->
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 paddingZero groupInput">
+                    <!--pumber list-->
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 paddingZero">
+                        <div><label>Pump</label></div>
+                        <div>
+                            <p-dropdown [options]="drpDownPumberList" [(ngModel)]="selectedPumber" class="inputField"
+                                pTooltip="Select pumper type" tooltipPosition="top" (onChange)="getFualPrice($event);"
+                                placeholder="Select a Pump"></p-dropdown>
+                        </div>
+                        <div class="alertMsg" *ngIf="showSelectedselectedPumberAlertmsg">
+                            <span>{{selectedselectedPumberAlert}}</span>
+                        </div>
+                    </div>
+                    <!--end pumber list-->
+                    <!--staff name-->
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 paddingZero">
+                        <div><label>Staff name: </label></div>
+                        <div>
+                            <input placeholder="Enter your Staff name" type="text" class="inputField"
+                                pTooltip="Enter your Staff name" tooltipPosition="top" [(ngModel)]="staffName" />
+                        </div>
+                        <div class="alertMsg" *ngIf="showSelectedstaffNameAlertmsg">
+                            <span>{{selectedstaffNameAlert}}</span>
+                        </div>
+                    </div>
+                    <!--end staff name-->
+                </div>
+                <!--Petrol price-->
+                <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 paddingZero">
+                    <div><label>Fuel Price: </label></div>
+                    <div style="display: flex;">
+                        <div class="inputSufixBox"><span>Rs</span></div>
+                        <div>
+                            <input type="number" [(ngModel)]="fuelPrice" class="inputField" disabled />
+                        </div>
+
+                    </div>
+                </div>
+                <!--end Petrol price-->
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+            </div>
+            <!--end form group 1-->
+            <div>
+                <hr />
+            </div>
+            <!--form group 2-->
+            <div class="container groupFormInput">
+                <!--opening balance-->
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 paddingZero groupFormInput">
+                    <div class="margin-right">
+                        <div><label>Opening Balance</label></div>
+                        <div style="display: flex;">
+                            <div>
+                                <input placeholder="Enter opening balance" class="inputField"
+                                    pTooltip="Enter opening balance" tooltipPosition="top" (keyup)="enterTestingField()"
+                                    [(ngModel)]="openingBalance" />
+                            </div>
+                            <div class="inputSufixBox"><span>liter</span></div>
+                        </div>
+                        <div *ngIf="showOpenAlertmsg" class="alertMsg"><span>{{alertOpening}}</span></div>
+                    </div>
+                    <!--end of opening balance-->
+                    <!--testing balance-->
+                    <div class="margin-right">
+                        <div><label>Testing Balance</label></div>
+                        <div style="display: flex;">
+                            <div><input placeholder="Enter testing balance" class="inputField"
+                                    [(ngModel)]="testingBalance" /></div>
+                            <div class="inputSufixBox"><span>liter</span></div>
+
+                        </div>
+
+
+                    </div>
+                    <!--end of testing balance-->
+                    <!--closing balance-->
+                    <div>
+                        <div><label>Closing Balance</label></div>
+                        <div style="display: flex;">
+                            <div><input placeholder="Enter closing balance" class="inputField"
+                                    (keyup)="calculateTotalPrice()"
+                                    pTooltip="Closing balancshould be greater than Opening and Testing Balance"
+                                    tooltipPosition="top" [(ngModel)]="closingBalance" /></div>
+                            <div class="inputSufixBox"><span>liter</span></div>
+                        </div>
+                        <div *ngIf="showClosingAlertmsg" class="alertMsg"><span>{{alertClosing}}</span></div>
+
+                    </div>
+                    <!--closing balance-->
+                    <div class="equalBtnMainStyle">
+
+                    </div>
+                    <div class="totalQuantitySection">
+                        <!--total balance-->
+                        <div class="margin-right">
+                            <div><label>Total Issue Quantity</label></div>
+                            <div style="display: flex;">
+                                <div><input [(ngModel)]="totalIssue" class="inputField" disabled /></div>
+                                <div class="inputSufixBox"><span>liter</span></div>
+                            </div>
+
+                        </div>
+                        <!--closing balance-->
+                        <div>
+                            <div><label>Total Price</label></div>
+                            <div style="display: flex;">
+                                <div class="inputSufixBox"><span>Rs</span></div>
+                                <div>
+                                    <input [(ngModel)]="totalPrice" class="inputField" disabled />
+                                </div>
+                            </div>
+
+                        </div>
+                        <input [(ngModel)]="recordId" hidden />
+                    </div>
+                </div>
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+            </div>
+            <!--end form group3-->
+        </div>
+        <!--button section-->
+        <div class="container groupFormInput">
+            <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 paddingZero buttonSection">
+                <div class="margin-right">
+                    <button class="submitBtn" (click)="submitRecord(recordId)">Submit</button>
+                </div>
+                <div>
+                    <button class="cancelBtn" (click)="cancel()">Cancel</button>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+        </div>
+        <!--button section end-->
+    </div>
+    <!--form started end-->
+</div>
+<!--end main content-->
