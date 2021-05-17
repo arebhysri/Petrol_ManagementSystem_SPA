@@ -1,0 +1,78 @@
+$green: #4caf50;
+$blue: #2196f3;
+$purple: #ce93d8;
+
+@mixin button-style($background-color, $border) {
+    background-color: $background-color;
+    color: white;
+    border: 1px solid $border;
+    border-radius: 5px;
+    width: auto;
+    cursor: pointer;
+}
+
+@mixin icon-button-style($background-color, $border) {
+    background-color: $background-color;
+    color: white;
+    font-size: 8pt;
+    padding: 5px;
+    border: 1px solid $border;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.anchor{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+.createNewBtn {
+    @include button-style($blue, $blue);
+}
+
+.backBtn {
+    @include button-style($green, $green);
+}
+/*---icon button-*/
+.edit-icon-button {
+    @include icon-button-style($green, $green);
+}
+
+@media only screen and (min-width: 375px) {
+    .createNewBtn {
+        background-color: #2196f3;
+        color: white;
+        border: 1px solid #2196f3;
+        border-radius: 5px;
+        width: auto;
+        cursor: pointer;
+        font-size: 6pt;
+    }
+}
+@media only screen and (min-width: 425px) {
+    .createNewBtn {
+        background-color: #2196f3;
+        color: white;
+        border: 1px solid #2196f3;
+        border-radius: 5px;
+        width: auto;
+        cursor: pointer;
+        font-size: 6pt;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .createNewBtn {
+        background-color: #2196f3;
+        color: white;
+        border: 1px solid #2196f3;
+        border-radius: 5px;
+        width: auto;
+        cursor: pointer;
+        font-size: 12pt;
+    }
+}

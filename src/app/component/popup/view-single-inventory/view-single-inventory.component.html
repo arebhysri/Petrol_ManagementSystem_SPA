@@ -14,27 +14,27 @@
     </div>
     <div *ngFor="let singleList of singleInventory">
         <div class="col-12" style="display: flex;">
-            <div class="col-6" style="border:4px solid;padding:0;">
-                <div style="border-bottom:1px solid;padding:0;"><label>User Name</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>Fuel Type</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>Created Date</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>Pumper Type</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>Closing Amount</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>Opening Amount</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>Testing Amount</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>Total Quantiy</label></div>
-                <div><label>Total Price</label></div>
+            <div class="col-6 label-fiels-section">
+                <div class="labelFields"><label>User Name</label></div>
+                <div class="labelFields"><label>Fuel Type</label></div>
+                <div class="labelFields"><label>Created Date</label></div>
+                <div class="labelFields"><label>Pumper</label></div>
+                <div class="labelFields"><label>Closing Amount</label></div>
+                <div class="labelFields"><label>Opening Amount</label></div>
+                <div class="labelFields"><label>Testing Amount</label></div>
+                <div class="labelFields"><label>Total Quantiy</label></div>
+                <div class="labelFields"><label>Total Price</label></div>
             </div>
-            <div class="col-6" style="border:4px solid;border-left: none;padding: 0;">
-                <div style="border-bottom:1px solid;padding:0;"><label>{{singleList.UserName}}</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>{{singleList.FuelType}}</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>{{singleList.CreatedDate | date}}</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>{{singleList.PumperType}}</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>{{singleList.ClosingAmount | number:'1.4-4'}} liters</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>{{singleList.OpeningAmount | number:'1.4-4'}} liters</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>{{singleList.TestingAmount | number:'1.4-4'}} liters</label></div>
-                <div style="border-bottom:1px solid;padding:0;"><label>{{singleList.TotalQuantiy | number:'1.4-4'}} liters</label></div>
-                <div><label>{{singleList.TotalPrice | currency:'Rs ':'symbol':'1.2-2'}}</label></div>
+            <div class="col-6 data-fiels-section">
+                <div class="dataFields"><label>{{singleList.UserName}}</label></div>
+                <div class="dataFields"><label>{{singleList.FuelType}}</label></div>
+                <div class="dataFields"><label>{{singleList.CreatedDate | date}}</label></div>
+                <div class="dataFields"><label>{{singleList.PumperType}}</label></div>
+                <div class="dataFields"><label>{{singleList.ClosingAmount | number:'1.4-4'}} liters</label></div>
+                <div class="dataFields"><label>{{singleList.OpeningAmount | number:'1.4-4'}} liters</label></div>
+                <div class="dataFields"><label>{{singleList.TestingAmount | number:'1.4-4'}} liters</label></div>
+                <div class="dataFields"><label>{{singleList.TotalQuantiy | number:'1.4-4'}} liters</label></div>
+                <div class="dataFields"><label>{{singleList.TotalPrice | currency:'Rs ':'symbol':'1.2-2'}}</label></div>
             </div>
             
         </div>

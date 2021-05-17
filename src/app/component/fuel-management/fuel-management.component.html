@@ -1,0 +1,108 @@
+<app-header-page></app-header-page>
+<!--main content-->
+<div class="bg-spring">
+    <!--form started-->
+    <div class="container" style="background-color: white;border-radius: 5px;padding: 0;">
+        <!--heading-->
+        <div class="headingStyle">
+            <h3>Manage Fuel details</h3>
+        </div>
+        <!--end heading-->
+        <div>
+            <!--button section-->
+            <div class="container groupFormInput">
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+                <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 paddingZero buttonSection">
+                    <div style="margin-right: auto;">
+                        <button class="backBtn" (click)="backToInventory()">Back to Inventory</button>
+                    </div>
+                </div>
+                <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 paddingZero buttonSection">
+                    <div style="margin-right: auto;">
+                        <button class="createNewBtn" (click)="createNewEntry()">Create New Fuel Entry</button>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 paddingZero "></div>
+            </div>
+            <!--button section end-->
+            <!--table section-->
+            <div class="container groupFormInput paddingZero">
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 paddingZero tableWidth">
+                    <div>
+                    <p-table #dt1 [value]="fualTypeList" dataKey="id" [rows]="5" [showCurrentPageReport]="false"
+                        [paginator]="true" [totalRecords]="tableLength"
+                        [globalFilterFields]="['FualType','FualCode','Price']">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th class="thWidth">
+                                    <div class="textOverFlow p-d-flex p-jc-between p-ai-center">
+                                        Fuel Type
+                                        <p-columnFilter  [showMatchModes]="false" [showOperator]="false"
+                                        [showAddButton]="false" type="text" field="FualType" display="menu"></p-columnFilter>
+                                    </div>
+                                </th>
+                                <th class="thWidth">
+                                    <div class="textOverFlow p-d-flex p-jc-between p-ai-center">
+                                        Fuel Price
+                                        <p-columnFilter field="representative" matchMode="in" display="menu"
+                                            field="Price" [showMatchModes]="false" [showOperator]="false"
+                                            [showAddButton]="false">
+
+                                        </p-columnFilter>
+                                    </div>
+                                </th>
+                                <th class="thWidth">
+                                    <div class="textOverFlow p-d-flex p-jc-between p-ai-center">
+                                        Fuel Code
+                                        <p-columnFilter type="text" field="FualCode" display="menu" [showMatchModes]="false" [showOperator]="false"
+                                        [showAddButton]="false">
+                                        </p-columnFilter>
+                                    </div>
+                                </th>
+                                <th class="thWidth">
+                                    <div class="textOverFlow p-d-flex p-jc-between p-ai-center">
+                                        Pumper details
+                                    </div>
+                                </th>
+                                
+                                <th class="thWidth">
+                                </th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-fual>
+                            <tr>
+                                <td>
+                                    <div class="textOverFlow"><span>{{fual.FualType}}</span></div>
+                                </td>
+
+                                <td>
+                                    <div class="textOverFlow">
+                                        <span class="image-text">{{fual.Price | currency:'Rs ':'symbol':'1.2-2'}}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="textOverFlow">
+                                        <span class="image-text">{{fual.FualCode}}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="textOverFlow">
+                                        <a (click)="viewPumberInventory(fual.FualCode)"><span class="anchor image-text">Pumber details</span></a>
+                                    </div>
+                                </td>
+                                <td style="display: flex;">
+                                    <div class="edit-icon-button" pTooltip="Edit" tooltipPosition="top" (click)="editInventory(fual.Id)"><i class="fas fa-pencil-alt"></i></div>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--end main content-->

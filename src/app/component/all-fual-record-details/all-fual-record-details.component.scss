@@ -36,9 +36,6 @@ $purple: #ce93d8;
 .paddingZero {
     padding: 0;
 }
-.showAllBtn {
-    @include button-style($purple, $purple);
-}
 .createNewBtn {
     @include button-style($blue, $blue);
 }

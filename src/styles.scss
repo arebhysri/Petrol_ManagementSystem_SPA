@@ -297,6 +297,9 @@ button:focus {
         flex: 0 0 8.333333%;
         max-width: 1.333333%;
     }
+    .pi {
+        font-size: 6pt !important;
+    }
 }
 @media only screen and (min-width: 768px) {
     hr {
@@ -408,4 +411,48 @@ button:focus {
         border: 0 none;
         font-size: 10pt !important;
     }
+}
+@media only screen and (min-width: 1286px) {
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .p-datatable .p-datatable-thead > tr > th {
+        text-align: left;
+        padding: 1rem 1rem;
+        border: 1px solid #e9ecef;
+        border-width: 0 0 1px 0;
+        font-weight: 600;
+        color: #495057;
+        background: #f8f9fa;
+        transition: box-shadow 0.2s;
+        font-size: 8pt;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        padding: 5px !important;
+        font-size: 8pt !important;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        font-size: 10pt
+    }
+    .p-calendar .p-inputtext {
+        flex: 1 1 auto;
+        width: 1%;
+        border-bottom: 1px solid #131386 !important;
+        border: 0px solid;
+        font-size: 8pt !important;
+    }
+    .p-dropdown .p-dropdown-label {
+        background: transparent;
+        border: 0 none;
+        font-size: 8pt !important;
+    }
+    
 }

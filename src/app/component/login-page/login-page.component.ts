@@ -16,6 +16,7 @@ export class LoginPageComponent implements OnInit {
   getLogin: IUserDetail[] = [];
   alert: string = 'Fill required field'
   showAlert: boolean = false;
+  adminRole : string = '';
 
   constructor(private userLoginServices: UserLoginService, public router: Router) { }
 
@@ -35,6 +36,7 @@ export class LoginPageComponent implements OnInit {
         if (data) {
           console.log("succuss");
           localStorage.setItem('userName', data[0].UserName);
+          localStorage.setItem('role',data[0].Type);
           this.router.navigate(['allFualRecord']);
         }
       })

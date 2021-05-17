@@ -1,0 +1,76 @@
+<app-header-page></app-header-page>
+<!--main content-->
+<div class="bg-spring">
+    <!--form started-->
+    <div class="container" style="background-color: white;border-radius: 5px;padding: 0;">
+        <!--heading-->
+        <div class="headingStyle">
+            <h3>Petrol & Diesel Management</h3>
+        </div>
+        <!--end heading-->
+        <div style="padding-top: 15px;">
+            <!--form group 1-->
+            <div class="container groupFormInput">
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 paddingZero groupInput">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 paddingZero ">
+                        <!--fuel type-->
+                        <div><label>Fuel Type: </label></div>
+                        <div>
+                            <p-dropdown [options]="dropdwnFualList" [(ngModel)]="selectedFualType"
+                                pTooltip="Select fuel type" tooltipPosition="top"
+                                (onChange)="getPumber($event)" placeholder="Select a Fuel Type"></p-dropdown>
+                        </div>
+                        <div class="alertMsg" *ngIf="showSelectedFuelTypeAlert">
+                            <span>{{selectedFuelTypeAlert}}</span>
+                        </div>
+                        <!--end fuel type-->
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 paddingZero">
+                        <!--fuel code-->
+                        <div><label>Fuel Code: </label></div>
+                        <div>
+                            <input placeholder="Enter fuel code" type="text" class="inputField"
+                                pTooltip="Enter fuel code" tooltipPosition="top" [(ngModel)]="fuelCode" />
+                        </div>
+                        <div class="alertMsg" *ngIf="showSelectedFuelCodeAlertmsg">
+                            <span>{{selectedFuelCodeAlert}}</span>
+                        </div>
+                        <input [(ngModel)]="recordId" hidden />
+                        <!--end fuel code-->
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 paddingZero">
+                        <!--pumber-->
+                        <div><label>Pumber: </label></div>
+                        <div>
+                            <input placeholder="Enter pumber" type="text" class="inputField"
+                                pTooltip="Enter pumber" tooltipPosition="top" [(ngModel)]="pumber" />
+                        </div>
+                        <div class="alertMsg" *ngIf="showSelectedPumbAlertmsg">
+                            <span>{{selectedPumbAlert}}</span>
+                        </div>
+                        <input [(ngModel)]="recordId" hidden />
+                        <!--end pumber-->
+                    </div>
+                </div>
+                <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+            </div>
+            <!--end form group 1-->
+        </div>
+        <!--button section-->
+        <div class="container groupFormInput">
+            <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 paddingZero buttonSection">
+                <div class="margin-right">
+                    <button class="submitBtn" (click)="submitRecord(recordId)">Submit</button>
+                </div>
+                <div>
+                    <button class="cancelBtn" (click)="cancel()">Cancel</button>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1 paddingZero"></div>
+        </div>
+        <!--button section end-->
+    </div>
+</div>
+<!--main content-->

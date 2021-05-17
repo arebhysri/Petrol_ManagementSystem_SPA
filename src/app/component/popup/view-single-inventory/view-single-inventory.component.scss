@@ -1,0 +1,23 @@
+.data-fiels-section{
+    border:4px solid;
+    border-left: none;
+    padding: 0;
+    .dataFields{
+        border-bottom:1px solid;
+        padding:0;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.label-fiels-section{
+    border:4px solid;
+    padding:0;
+    .labelFields{
+        border-bottom:1px solid;
+        padding:0;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: 900;
+    }
+}

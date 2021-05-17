@@ -17,11 +17,16 @@ import { ViewSingleInventoryComponent } from '../popup/view-single-inventory/vie
 export class AllFualRecordDetailsComponent implements OnInit {
 
   fualRecordList: FuelInventory[] = [];
+  getRole : any ='';
+  showFuelBtton:boolean = false;
+  tableLength:number=0;
 
   constructor(public fuelInventoryService: FuelInventoryService, public dialogService: DialogService, public router: Router) { }
 
   ngOnInit(): void {
+    this.getRole = localStorage.getItem('role');
     this.getFualRecord();
+    this.displayFuelBtton();
   }
 
   getFualRecord() {
@@ -42,7 +47,7 @@ export class AllFualRecordDetailsComponent implements OnInit {
             Id: element.Id
           })
         });
-
+        this.tableLength=this.fualRecordList.length;
         console.log(this.fualRecordList)
       }
     })
@@ -87,5 +92,17 @@ export class AllFualRecordDetailsComponent implements OnInit {
   editInventory(id: number) {
     let recordId = id.toString();
     this.router.navigate(['editPetrolSubmission', recordId]);
+  }
+
+  //display the view fuel detail
+  displayFuelBtton(){
+    if(this.getRole == 'Super admin'){
+      this.showFuelBtton =true;
+    }
+  }
+
+  //show fuel inventory
+  viewFuelInventory(){
+    this.router.navigate(['fuelInventory']);
   }
 }

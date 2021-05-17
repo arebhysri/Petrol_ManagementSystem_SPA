@@ -12,6 +12,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {DropdownModule} from 'primeng/dropdown';
 import {TableModule} from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
+import {PaginatorModule} from 'primeng/paginator';
 
 //import components
 import { LoginPageComponent } from './component/login-page/login-page.component';
@@ -21,6 +22,10 @@ import { AllFualRecordDetailsComponent } from './component/all-fual-record-detai
 import { HeaderPageComponent } from './component/header-page/header-page.component';
 import { FooterPageComponent } from './component/footer-page/footer-page.component';
 import { ViewSingleInventoryComponent } from './component/popup/view-single-inventory/view-single-inventory.component';
+import { FuelManagementComponent } from './component/fuel-management/fuel-management.component';
+import { CreateFuelManagementComponent } from './component/create-fuel-management/create-fuel-management.component';
+import { CreatePumperComponent } from './component/create-pumper/create-pumper.component';
+import { PumberManagementComponent } from './component/pumber-management/pumber-management.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +36,14 @@ import { ViewSingleInventoryComponent } from './component/popup/view-single-inve
     AllFualRecordDetailsComponent,
     HeaderPageComponent,
     FooterPageComponent,
-    ViewSingleInventoryComponent
+    ViewSingleInventoryComponent,
+    FuelManagementComponent,
+    CreateFuelManagementComponent,
+    CreatePumperComponent,
+    PumberManagementComponent
   ],
   imports: [
+    PaginatorModule,
     TooltipModule,
     BrowserModule,
     AppRoutingModule,
